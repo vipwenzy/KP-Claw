@@ -116,11 +116,11 @@ function Hero() {
             <h1 className="text-5xl md:text-7xl font-semibold text-slate-900 tracking-tight mb-6 leading-[1.1]">
               快批 × OpenClaw <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                让 ERP 会思考，更能替你跑腿
+                你的全天候私有数字员工
               </span>
             </h1>
             <p className="text-xl text-slate-500 mb-10 max-w-2xl mx-auto font-medium">
-              全球首个基于 OpenClaw 架构的智能进销存代理。不只是软件，更是 24/7 在线的“数字员工”。
+              全球首个基于 OpenClaw 架构的智能进销存代理。数据主权绝对掌控，让 ERP 会思考，更能替你跑腿。
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link to="/gateway" className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-medium transition-all flex items-center justify-center gap-2 text-lg">
@@ -157,97 +157,75 @@ function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mt-20"
+          className="max-w-5xl mx-auto mt-20 relative"
         >
-          {/* Left: Complex ERP UI (Light Mode) */}
-          <div className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden aspect-[4/3] flex flex-col">
-            <div className="h-10 border-b border-slate-100 flex items-center px-4 gap-2 bg-slate-50">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              </div>
-              <div className="ml-4 text-xs text-slate-400 font-mono">kuaipi-erp-dashboard</div>
-            </div>
-            <div className="p-4 flex-1 flex flex-col gap-4 opacity-60">
-              <div className="flex gap-4">
-                <div className="w-48 h-8 bg-slate-100 rounded-md"></div>
-                <div className="w-32 h-8 bg-slate-100 rounded-md"></div>
-                <div className="w-full h-8 bg-slate-100 rounded-md"></div>
-              </div>
-              <div className="flex-1 flex gap-4">
-                <div className="w-48 bg-slate-50 rounded-md border border-slate-100 hidden sm:block"></div>
-                <div className="flex-1 bg-white rounded-md border border-slate-100 p-4 shadow-sm">
-                  <div className="space-y-4">
-                    <div className="h-6 w-1/4 bg-slate-200 rounded"></div>
-                    <div className="h-px w-full bg-slate-100"></div>
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div key={i} className="flex gap-4 items-center">
-                        <div className="h-4 w-12 bg-slate-100 rounded"></div>
-                        <div className="h-4 w-1/3 bg-slate-100 rounded"></div>
-                        <div className="h-4 w-1/4 bg-slate-100 rounded"></div>
-                        <div className="h-6 w-16 bg-blue-50 rounded-md"></div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/80"></div>
-          </div>
+          <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-slate-200/50 aspect-[16/9] md:aspect-[21/9] bg-slate-900 group">
+            {/* Main Image: Wholesale/Warehouse scenario with person */}
+            <img 
+              src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+              alt="Wholesale manager in warehouse using smart ERP" 
+              className="w-full h-full object-cover opacity-75 group-hover:opacity-85 transition-opacity duration-700"
+              referrerPolicy="no-referrer"
+            />
+            
+            {/* Gradient Overlay for better contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
 
-          {/* Right: Chat UI (Light Mode) */}
-          <div className="relative rounded-3xl bg-slate-50 border border-slate-200 shadow-[0_30px_60px_rgba(0,0,0,0.08)] overflow-hidden aspect-[4/3] flex flex-col -ml-0 lg:-ml-16 z-10 transform lg:translate-y-8">
-            <div className="h-16 border-b border-slate-200 flex items-center px-6 justify-between bg-white/80 backdrop-blur-md">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow-sm">
-                  <span className="text-white text-xl">🦞</span>
+            {/* Floating Chat Integration (WeChat/DingTalk) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="absolute top-6 left-6 md:top-10 md:left-10 bg-white/95 backdrop-blur-md border border-slate-100 rounded-2xl p-4 flex flex-col gap-3 shadow-2xl max-w-[260px]"
+            >
+              <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+                <div className="w-7 h-7 rounded bg-[#07C160] flex items-center justify-center shadow-sm">
+                  <MessageCircle className="w-4 h-4 text-white" />
                 </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-900">快批智能代理</div>
-                  <div className="text-xs text-slate-500 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                    在线
-                  </div>
-                </div>
+                <span className="text-slate-800 font-bold text-sm">老板 (企微)</span>
               </div>
-            </div>
-            <div className="p-6 flex-1 flex flex-col gap-6 overflow-y-auto bg-[#f5f5f7]">
-              <div className="flex justify-end">
-                <div className="bg-blue-600 text-white px-5 py-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm shadow-sm">
-                  帮我把上周欠款的老板理出来，并催一下
-                </div>
+              <div className="text-slate-700 text-sm font-medium leading-relaxed">
+                "帮我查下华南仓大红袍的库存，理一份上个月的对账单发给李总。"
               </div>
-              
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex-shrink-0 flex items-center justify-center mt-1 shadow-sm">
+            </motion.div>
+
+            {/* Floating AI Intelligence & Security Bubble */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              className="absolute bottom-6 right-6 md:bottom-10 md:right-10 bg-slate-900/95 backdrop-blur-xl rounded-2xl p-5 shadow-2xl max-w-md border border-slate-700/50"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shrink-0 border border-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                   <span className="text-white text-sm">🦞</span>
                 </div>
-                <div className="bg-white text-slate-800 px-5 py-4 rounded-2xl rounded-tl-sm max-w-[85%] text-sm space-y-4 shadow-sm border border-slate-100">
-                  <div className="flex items-center gap-2 text-slate-400 text-xs font-mono bg-slate-50 px-2 py-1 rounded-md w-fit border border-slate-100">
-                    <Activity className="w-3 h-3" />
-                    <span>Executing: query_receivables & send_reminder</span>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-white text-sm font-bold">快批私有代理</span>
+                    <span className="flex items-center gap-1 text-emerald-400 text-[10px] font-medium bg-emerald-400/10 px-2 py-1 rounded-full border border-emerald-400/20">
+                      <ShieldCheck className="w-3 h-3" />
+                      IronBox 本地处理
+                    </span>
                   </div>
-                  <p className="font-medium">已生成账单并发送至 3 位客户，其中 1 位已确认。</p>
-                  <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                    <div className="flex justify-between items-center mb-3">
-                      <span className="text-xs font-semibold text-slate-500">催款明细</span>
-                      <span className="text-sm font-bold text-slate-900">¥ 45,200.00</span>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between text-sm items-center">
-                        <span className="text-slate-700">张总 (华南大区)</span>
-                        <span className="text-emerald-600 flex items-center gap-1 text-xs font-medium bg-emerald-50 px-2 py-1 rounded-full"><CheckCircle2 className="w-3 h-3"/> 已确认</span>
+                  <div className="text-slate-300 text-sm leading-relaxed mb-4">
+                    已在本地完成盘点，华南仓剩余 <span className="text-blue-400 font-bold">120</span> 件。对账单已生成。
+                  </div>
+                  <div className="bg-slate-800/80 rounded-xl p-3 border border-slate-600/50">
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-col">
+                        <span className="text-slate-400 text-[11px] mb-0.5">高敏财务数据已脱敏</span>
+                        <span className="text-slate-200 text-xs font-medium">是否通过企微安全通道发送？</span>
                       </div>
-                      <div className="flex justify-between text-sm items-center">
-                        <span className="text-slate-700">李总 (华东大区)</span>
-                        <span className="text-slate-500 text-xs bg-slate-100 px-2 py-1 rounded-full">已发送微信</span>
-                      </div>
+                      <button className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm shrink-0 ml-2">
+                        一键发送
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -259,21 +237,21 @@ function Features() {
   const features = [
     {
       icon: <Activity className="w-6 h-6 text-blue-600" />,
-      title: '从“反应”到“主动”',
-      subtitle: 'Heartbeat 机制',
-      description: '告别人找数据。内置 OpenClaw“心脏跳动”调度器，每 30 分钟自动盘点业务状态。断货预警、异常订单、财务缺口，AI 领先一步发现并处理。'
+      title: '业务自动驾驶',
+      subtitle: '告别“人找数据”，让 AI 替你跑腿',
+      description: '内置 OpenClaw 引擎与 Heartbeat 巡检机制。断货预警、异常订单、财务缺口，AI 7x24 小时主动发现并处理，彻底解放人力，从“被动反应”走向“主动决策”。'
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
-      title: '数据不出场',
-      subtitle: '私有化硬件环境',
-      description: '专为企业级设计。快批智算盒子（Gateway）本地运行，核心商业数据存储在本地 SQLite 数据库，仅在本地进行 RAG 检索，安全合规。'
+      title: '绝对数据主权',
+      subtitle: '核心机密寸步不让，数据物理隔离',
+      description: '独创“端云混合”架构。高敏财务与客户数据由本地 IronBox 网关与快批私有云闭环处理，零数据留存，彻底斩断公有大模型的数据泄露风险。'
     },
     {
       icon: <Smartphone className="w-6 h-6 text-indigo-600" />,
-      title: '全渠道指挥部',
-      subtitle: 'Multi-channel 接入',
-      description: '微信、钉钉、飞书或 Web 浏览器，任何终端都是你的 ERP 控制台。一句话实现开单、查库、改价。'
+      title: '老板绝对掌控',
+      subtitle: '企微/钉钉一键审批，AI 绝不擅权',
+      description: '无论身在何处，通过微信或钉钉即可随时指挥 ERP。所有涉及资金与改价的敏感操作，均需“人在回路 (HITL)”审批，确保安全可控。'
     }
   ];
 
@@ -281,8 +259,8 @@ function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">三大核心价值</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">重塑企业管理范式，让 ERP 成为真正的主动型业务伙伴。</p>
+          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">重塑大中型批发商的管理范式</h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">兼顾降本增效与绝对安全，让 ERP 成为真正值得信赖的业务伙伴。</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
