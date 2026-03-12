@@ -236,22 +236,28 @@ function Hero() {
 function Features() {
   const features = [
     {
-      icon: <Activity className="w-6 h-6 text-blue-600" />,
-      title: '业务自动驾驶',
-      subtitle: '告别“人找数据”，让 AI 替你跑腿',
-      description: '内置 OpenClaw 引擎与 Heartbeat 巡检机制。断货预警、异常订单、财务缺口，AI 7x24 小时主动发现并处理，彻底解放人力，从“被动反应”走向“主动决策”。'
+      icon: <Layers className="w-6 h-6 text-blue-600" />,
+      title: '全场景智能覆盖',
+      subtitle: '多终端无缝协同，随时随地指挥业务',
+      description: '深度对接企业微信、钉钉、飞书等主流办公软件。无论是在档口开单、仓库盘点，还是出差在外，老板和员工都能通过自然语言随时指挥 ERP，实现业务全链路的智能接管。'
+    },
+    {
+      icon: <BrainCircuit className="w-6 h-6 text-indigo-600" />,
+      title: '云端私有大模型',
+      subtitle: '更懂批发场景，拒绝“假大空”',
+      description: '摒弃通用大模型，快批私有云大模型经过海量真实批发业务数据训练。它不仅懂“进销存”的复杂逻辑，更能精准理解行业黑话、多规格换算与阶梯报价，真正成为你的业务专家。'
+    },
+    {
+      icon: <Box className="w-6 h-6 text-amber-600" />,
+      title: 'IronBox 智能网关',
+      subtitle: '部署在店里的 OpenClaw 超级大脑',
+      description: '独创端侧智能硬件。IronBox 作为本地算力与数据中枢，内置 OpenClaw 引擎与 Heartbeat 巡检机制，7x24 小时主动发现断货预警与财务缺口，让 ERP 从“被动记录”进化为“主动决策”。'
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
-      title: '绝对数据主权',
-      subtitle: '核心机密寸步不让，数据物理隔离',
-      description: '独创“端云混合”架构。高敏财务与客户数据由本地 IronBox 网关与快批私有云闭环处理，零数据留存，彻底斩断公有大模型的数据泄露风险。'
-    },
-    {
-      icon: <Smartphone className="w-6 h-6 text-indigo-600" />,
-      title: '老板绝对掌控',
-      subtitle: '企微/钉钉一键审批，AI 绝不擅权',
-      description: '无论身在何处，通过微信或钉钉即可随时指挥 ERP。所有涉及资金与改价的敏感操作，均需“人在回路 (HITL)”审批，确保安全可控。'
+      title: '企业级安全方案',
+      subtitle: '数据不出库，核心机密绝对掌控',
+      description: '采用“端云混合”物理隔离架构。高敏财务与客户数据仅在本地 IronBox 闭环处理，零数据上传公有云。所有涉及资金与改价的敏感操作均需“人在回路”审批，彻底斩断数据泄露风险。'
     }
   ];
 
@@ -259,10 +265,10 @@ function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">重塑大中型批发商的管理范式</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">兼顾降本增效与绝对安全，让 ERP 成为真正值得信赖的业务伙伴。</p>
+          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">四大核心优势</h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">重塑大中型批发商的管理范式，兼顾降本增效与绝对安全。</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
@@ -270,14 +276,14 @@ function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-slate-50 border border-slate-100 rounded-3xl p-8 hover:shadow-lg transition-all duration-300"
+              className="bg-slate-50 border border-slate-100 rounded-3xl p-8 hover:shadow-lg transition-all duration-300 flex flex-col"
             >
               <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-6">
                 {feature.icon}
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">{feature.title}</h3>
               <div className="text-sm font-semibold text-blue-600 mb-4">{feature.subtitle}</div>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed flex-1">
                 {feature.description}
               </p>
             </motion.div>
@@ -398,8 +404,12 @@ function Scenarios() {
     <section id="scenarios" className="py-24 bg-[#fbfbfd]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6 border border-blue-100">
+            <Layers className="w-4 h-4" />
+            核心优势一
+          </div>
           <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">全场景智能覆盖</h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">深入业务毛细血管，一句话搞定复杂操作。</p>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">多终端无缝协同，深入业务毛细血管，一句话搞定复杂操作。</p>
         </div>
         
         <div className="flex flex-col lg:flex-row gap-12 max-w-5xl mx-auto items-center">
@@ -482,6 +492,87 @@ function Scenarios() {
             </div>
           </div>
         </div>
+
+        {/* Skill Market Module */}
+        <div className="mt-32 max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4">快批私有 Skill 市场</h3>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">不断进化的专属技能库，像搭积木一样为您构建更丰富的业务场景应用。</p>
+          </div>
+
+          <div className="relative bg-white rounded-[2.5rem] p-8 md:p-12 border border-slate-200 shadow-xl overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 relative z-10">
+              {/* Skill Cards */}
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-blue-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <FileCode2 className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">智能极速开单</h4>
+                <p className="text-xs text-slate-500">语音/图片识别商品，自动匹配客户价，一键生成单据。</p>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-emerald-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Package className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">库存智能预警</h4>
+                <p className="text-xs text-slate-500">结合历史销量预测断货风险，自动生成采购建议单。</p>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-purple-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">客户360画像</h4>
+                <p className="text-xs text-slate-500">分析客户拿货偏好与周期，提供个性化推款建议。</p>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-amber-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Coins className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">智能催款助手</h4>
+                <p className="text-xs text-slate-500">识别超期欠款，自动拟定委婉催款话术并发送提醒。</p>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-rose-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">爆款趋势分析</h4>
+                <p className="text-xs text-slate-500">多维度交叉分析近期热销单品，辅助备货决策。</p>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-indigo-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <PieChart className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">利润多维核算</h4>
+                <p className="text-xs text-slate-500">自动分摊各项隐性成本，精准计算单品/单客真实毛利。</p>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-slate-100 p-5 rounded-2xl hover:shadow-md transition-shadow hover:border-cyan-100 group cursor-pointer">
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h4 className="font-semibold text-slate-900 mb-1">异常订单拦截</h4>
+                <p className="text-xs text-slate-500">智能识别价格错乱、超低折扣等异常单据，自动拦截审批。</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 p-5 rounded-2xl flex flex-col items-center justify-center text-center group cursor-pointer hover:shadow-md transition-all">
+                <div className="w-12 h-12 rounded-full bg-white text-blue-600 flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 transition-transform">
+                  <Plus className="w-6 h-6" />
+                </div>
+                <h4 className="font-semibold text-blue-900 mb-1">更多专属 Skill</h4>
+                <p className="text-xs text-blue-600/70">持续进化，按需定制</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -492,14 +583,59 @@ function Architecture() {
     <section id="architecture" className="py-24 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6 border border-blue-100">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-6 border border-indigo-100">
             <BrainCircuit className="w-4 h-4" />
-            技术架构解密
+            核心优势二
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">让大模型真正“懂” ERP</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">云端私有大模型：更懂批发场景</h2>
           <p className="text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed">
-            ERP 数据的核心是结构化 SQL 数据库，而大模型擅长的是文本。单纯靠模型“背诵”手册没有意义，<strong className="text-slate-900 font-semibold">关键是让它学会“如何操作你的 ERP”。</strong>
+            摒弃通用大模型的“假大空”。快批私有云大模型经过海量真实批发业务数据训练，<strong className="text-slate-900 font-semibold">不仅懂“进销存”的复杂逻辑，更能精准理解行业黑话。</strong>
           </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto mb-8">
+          {/* Hybrid Strategy Card */}
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2.5rem] p-8 md:p-10 border border-slate-700 relative overflow-hidden shadow-xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+            
+            <div className="flex items-center gap-4 mb-8 relative z-10">
+              <div className="w-14 h-14 rounded-2xl bg-slate-800 shadow-sm border border-slate-700 flex items-center justify-center shrink-0">
+                <Network className="w-7 h-7 text-emerald-400" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">采用混合架构 (Hybrid Strategy)</h3>
+                <p className="text-emerald-400 font-medium mt-1">兼顾成本与绝对安全</p>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 relative z-10">
+              <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                <h4 className="flex items-center gap-2 font-semibold text-white mb-3">
+                  <Cloud className="w-5 h-5 text-blue-400" />
+                  通用任务走云端 API
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-3">
+                  例如：写周报、生成营销文案、通用问答等。
+                </p>
+                <div className="inline-flex items-center text-xs font-medium text-blue-400 bg-blue-400/10 px-2.5 py-1 rounded-full border border-blue-400/20">
+                  优势：调用成本低，响应速度快
+                </div>
+              </div>
+              
+              <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
+                <h4 className="flex items-center gap-2 font-semibold text-white mb-3">
+                  <Lock className="w-5 h-5 text-emerald-400" />
+                  核心任务走本地私有模型
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-3">
+                  例如：算利润、查欠款、修改价格等高敏操作，强制路由到 IronBox 运行的开源私有模型（如 DeepSeek 或 Llama 3/4）。
+                </p>
+                <div className="inline-flex items-center text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-full border border-emerald-400/20">
+                  优势：确保数据物理不出厂，绝对安全
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -582,103 +718,19 @@ function Architecture() {
   );
 }
 
-function PrivateModel() {
-  return (
-    <section id="private-model" className="py-24 bg-[#fbfbfd] border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-600 text-sm font-semibold mb-6 border border-emerald-100">
-            <Lock className="w-4 h-4" />
-            快批混合大模型架构
-          </div>
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">商业机密，寸步不让</h2>
-          <p className="text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed">
-            所有用户都能享受快批私有云端大模型。我们采用<strong className="text-slate-900 font-semibold">混合模式</strong>：日常非核心任务调用通用大模型，核心数据调用私有大模型，从物理和网络层面彻底避免核心商业数据在公有云中泄漏。
-          </p>
-        </div>
-
-        {/* Strategy - Tiered Deployment */}
-        <div className="mb-20">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Public Cloud */}
-            <div className="bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-sm relative overflow-hidden group hover:shadow-md transition-all duration-300">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-blue-50 rounded-full blur-3xl -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
-              <div className="flex items-center gap-4 mb-6 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shadow-sm">
-                  <Cloud className="w-7 h-7" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-slate-900">通用大模型</h4>
-                  <p className="text-blue-600 text-sm font-medium mt-1">处理日常非核心任务</p>
-                </div>
-              </div>
-              <p className="text-slate-600 leading-relaxed relative z-10">
-                用于处理非敏感任务，如生成营销文案、回复通用询价、多语言翻译等。充分利用顶级公有云模型强大的泛化与推理能力。
-              </p>
-            </div>
-
-            {/* Private Cloud */}
-            <div className="bg-slate-900 rounded-[2rem] p-8 md:p-10 border border-slate-800 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
-              <div className="flex items-center gap-4 mb-6 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-slate-800 text-emerald-400 flex items-center justify-center border border-slate-700 shadow-sm">
-                  <Server className="w-7 h-7" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white">快批私有云端大模型</h4>
-                  <p className="text-emerald-400 text-sm font-medium mt-1">处理核心敏感数据</p>
-                </div>
-              </div>
-              <p className="text-slate-400 leading-relaxed relative z-10">
-                支持各类国产大模型，专门处理涉及财务账目、客户名单和库存策略的敏感任务，确保核心商业数据不出私有云，保障绝对安全。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Core Values */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 border border-emerald-100">
-              <ShieldCheck className="w-6 h-6 text-emerald-600" />
-            </div>
-            <h4 className="text-xl font-bold text-slate-900 mb-3">数据隔离</h4>
-            <p className="text-slate-600 leading-relaxed">满足大中型批发商对“商业秘密不出库”的硬性要求，彻底杜绝核心财务与客户数据泄露风险。</p>
-          </div>
-          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 border border-blue-100">
-              <LineChart className="w-6 h-6 text-blue-600" />
-            </div>
-            <h4 className="text-xl font-bold text-slate-900 mb-3">成本可控</h4>
-            <p className="text-slate-600 leading-relaxed">当日调用量超过 1M Tokens 后，私有化部署的 TCO（总拥有成本）在 4 个月左右即可低于 API 调用费。</p>
-          </div>
-          <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center mb-6 border border-indigo-100">
-              <Anchor className="w-6 h-6 text-indigo-600" />
-            </div>
-            <h4 className="text-xl font-bold text-slate-900 mb-3">版本锚定</h4>
-            <p className="text-slate-600 leading-relaxed">避免公有云模型更新导致的 Skill 逻辑失效（即“模型退化”问题），确保企业级自动化流程的绝对稳定。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Hardware() {
   return (
     <section id="hardware" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold mb-6 border border-slate-200">
-              <Cpu className="w-4 h-4" />
-              必选本地网关
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold mb-6 border border-amber-200">
+              <Box className="w-4 h-4" />
+              核心优势三
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">智算网关 IronBox</h2>
+            <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">IronBox：OpenClaw 智能网关</h2>
             <p className="text-xl text-slate-500 mb-10 leading-relaxed">
-              快批不支持云端部署 OpenClaw，IronBox 是实现 AI 代理的<strong className="text-slate-900">必选项</strong>。它在本地运行 OpenClaw 引擎，直接对接内网 ERP 数据库。
+              部署在店里的超级大脑。IronBox 在本地运行 OpenClaw 引擎，直接对接内网 ERP 数据库，让系统从“被动记录”进化为“主动决策”。
             </p>
             
             <div className="space-y-8">
@@ -752,86 +804,51 @@ function SecuritySolution() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 text-emerald-400 text-sm font-semibold mb-6 border border-slate-700">
-            <Shield className="w-4 h-4" />
-            快批 ERP 代理化安全解决方案
+            <ShieldCheck className="w-4 h-4" />
+            核心优势四
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-6 tracking-tight">企业数字资产保险箱</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold mb-6 tracking-tight">企业级安全解决方案</h2>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            通过<strong className="text-white font-semibold">快批智算网关（IronBox）</strong>与<strong className="text-white font-semibold">快批私有大模型中心（Sovereign Cloud）</strong>的联动，解决企业级数据主权与成本之间的矛盾。
+            数据不出库，核心机密绝对掌控。采用<strong className="text-white font-semibold">“端云混合”物理隔离架构</strong>，彻底斩断公有大模型的数据泄露风险。
           </p>
         </div>
 
-        {/* Core Architecture Design */}
-        <div className="mb-24">
-          <h3 className="text-2xl font-bold mb-10 text-center flex items-center justify-center gap-3">
-            <Network className="w-6 h-6 text-blue-400" />
-            快批安全架构设计
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 backdrop-blur-sm hover:bg-slate-800 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6 border border-blue-500/30">
-                <Server className="w-6 h-6 text-blue-400" />
-              </div>
-              <h4 className="text-xl font-bold mb-3">混合主权路由机制</h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                系统根据任务敏感度自动分发请求。
-              </p>
-              <ul className="space-y-3 text-sm text-slate-300">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 shrink-0"></span>
-                  <span><strong className="text-white">低敏任务：</strong>路由至公有云 API（降低计算成本）</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span>
-                  <span><strong className="text-white">高敏任务：</strong>强制路由至快批私有模型中心，确保 Token 链路闭环</span>
-                </li>
-              </ul>
-            </div>
+        {/* Three Firewalls */}
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden mb-24">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+          
+          <div className="text-center mb-12 relative z-10">
+            <h3 className="text-2xl md:text-4xl font-bold mb-4">快批安全的“三道防火墙”</h3>
+            <p className="text-slate-400">商业化合规与准则：零数据留存协议，透明化任务链审计</p>
+          </div>
 
-            <div className="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 backdrop-blur-sm hover:bg-slate-800 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-6 border border-amber-500/30">
-                <EyeOff className="w-6 h-6 text-amber-400" />
+          <div className="grid md:grid-cols-3 gap-6 relative z-10">
+            <div className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 border border-slate-600">
+                <span className="text-xl font-bold text-slate-300">1</span>
               </div>
-              <h4 className="text-xl font-bold mb-3">边缘脱敏引擎</h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                在数据离开“快批智算盒子”前进行强制本地处理。
-              </p>
-              <ul className="space-y-3 text-sm text-slate-300">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></span>
-                  <span><strong className="text-white">动态掩码：</strong>自动识别并替换 PII 及精确财务数字为占位符</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></span>
-                  <span><strong className="text-white">本地还原：</strong>策略返回后由本地网关还原真实数据，实现“可用不可见”</span>
-                </li>
-              </ul>
+              <h4 className="text-lg font-bold text-white mb-2">IronBox 网关</h4>
+              <p className="text-slate-400 text-sm">在边缘侧完成 PII 脱敏和 RAG 检索，确保“脏数据”不出场。</p>
             </div>
-
-            <div className="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 backdrop-blur-sm hover:bg-slate-800 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 border border-purple-500/30">
-                <Database className="w-6 h-6 text-purple-400" />
+            <div className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 border border-slate-600">
+                <span className="text-xl font-bold text-slate-300">2</span>
               </div>
-              <h4 className="text-xl font-bold mb-3">本地化 RAG 索引</h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                AI 的“账本”必须留在本地。
-              </p>
-              <ul className="space-y-3 text-sm text-slate-300">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 shrink-0"></span>
-                  <span><strong className="text-white">私密存储：</strong>业务上下文与历史记忆存储在盒子内部，不上传云端</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 shrink-0"></span>
-                  <span><strong className="text-white">物理隔离：</strong>本地运行检索，仅将相关片段加入推理上下文</span>
-                </li>
-              </ul>
+              <h4 className="text-lg font-bold text-white mb-2">快批私有云</h4>
+              <p className="text-slate-400 text-sm">提供具备公有模型智力、但受快批管辖的私有推理环境，解决 Token 安全。</p>
+            </div>
+            <div className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 border border-slate-600">
+                <span className="text-xl font-bold text-slate-300">3</span>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">OpenClaw HITL</h4>
+              <p className="text-slate-400 text-sm">将最终决策权牢牢握在“老板”手中，确保 AI 只跑腿、不擅权。</p>
             </div>
           </div>
         </div>
 
         {/* Functional Requirements Table (Visualized as Cards) */}
-        <div className="mb-24">
+        <div>
           <h3 className="text-2xl font-bold mb-10 text-center flex items-center justify-center gap-3">
             <Layers className="w-6 h-6 text-emerald-400" />
             四层安全隔离机制
@@ -876,40 +893,6 @@ function SecuritySolution() {
                 <p className="text-slate-400 text-sm mb-2"><strong className="text-slate-200">策略：</strong>Docker 沙箱运行，所有 Skill 在受限容器中运行，剥夺 Root 权限。</p>
                 <p className="text-emerald-400 text-sm font-medium">预期：防止恶意 Skill 入侵宿主机系统。</p>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Three Firewalls */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          
-          <div className="text-center mb-12 relative z-10">
-            <h3 className="text-2xl md:text-4xl font-bold mb-4">快批安全的“三道防火墙”</h3>
-            <p className="text-slate-400">商业化合规与准则：零数据留存协议，透明化任务链审计</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 relative z-10">
-            <div className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 text-center">
-              <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 border border-slate-600">
-                <span className="text-xl font-bold text-slate-300">1</span>
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">IronBox 网关</h4>
-              <p className="text-slate-400 text-sm">在边缘侧完成 PII 脱敏和 RAG 检索，确保“脏数据”不出场。</p>
-            </div>
-            <div className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 text-center">
-              <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 border border-slate-600">
-                <span className="text-xl font-bold text-slate-300">2</span>
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">快批私有云</h4>
-              <p className="text-slate-400 text-sm">提供具备公有模型智力、但受快批管辖的私有推理环境，解决 Token 安全。</p>
-            </div>
-            <div className="bg-slate-900/50 border border-slate-700 rounded-2xl p-6 text-center">
-              <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 border border-slate-600">
-                <span className="text-xl font-bold text-slate-300">3</span>
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">OpenClaw HITL</h4>
-              <p className="text-slate-400 text-sm">将最终决策权牢牢握在“老板”手中，确保 AI 只跑腿、不擅权。</p>
             </div>
           </div>
         </div>
@@ -1021,11 +1004,11 @@ function Pricing() {
               <h4 className="text-lg font-bold text-slate-900 mb-1">通用大模型调用</h4>
               <p className="text-slate-500 text-sm mb-4">用于日常非核心任务</p>
               <div className="mb-4 pb-4 border-b border-slate-100">
-                <span className="text-3xl font-bold text-slate-900">¥15</span>
-                <span className="text-slate-500 text-sm"> / 1M Tokens</span>
+                <span className="text-2xl font-bold text-slate-900">支持自定义配置</span>
               </div>
               <ul className="space-y-3 text-sm text-slate-600">
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"/> <span>超额后按实际调用量计费</span></li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"/> <span>支持用户配置自己选择的大模型</span></li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"/> <span>不收取额外费用，按第三方平台标准计费</span></li>
               </ul>
             </div>
 
@@ -1081,7 +1064,6 @@ function Landing() {
         <Features />
         <Scenarios />
         <Architecture />
-        <PrivateModel />
         <Hardware />
         <SecuritySolution />
         <Pricing />
