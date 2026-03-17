@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import GatewayDemo from './GatewayDemo';
+import ScenariosPage from './ScenariosPage';
 import {
   Activity,
   ShieldCheck,
@@ -432,6 +433,10 @@ function Scenarios() {
                 {activeTab === scenario.id && <ChevronRight className="w-5 h-5 ml-auto hidden lg:block" />}
               </button>
             ))}
+            
+            <Link to="/scenarios" className="mt-4 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-blue-600 font-semibold hover:bg-blue-50 transition-colors border border-blue-100">
+              查看更多场景 <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Interactive Demo Area */}
@@ -749,7 +754,7 @@ function Hardware() {
                 </div>
                 <div>
                   <h4 className="text-slate-900 font-semibold text-lg mb-1">内网直连，数据不出局</h4>
-                  <p className="text-slate-500">安全连接本地 ERP 数据库，无需将核心业务数据暴露在公网，彻底杜绝泄露风险。</p>
+                  <p className="text-slate-500">通过内置 Tailscale 安全隧道，与快批云端建立专属加密连接，实现数据内网级直连，彻底隐匿公网接口，杜绝外部扫描与泄露风险。</p>
                 </div>
               </div>
               <div className="flex gap-5">
@@ -1079,6 +1084,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/gateway" element={<GatewayDemo />} />
+        <Route path="/scenarios" element={<ScenariosPage />} />
       </Routes>
     </BrowserRouter>
   );
